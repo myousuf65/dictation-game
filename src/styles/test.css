@@ -1,75 +1,192 @@
-.neonText {
-	color: black;
-	text-shadow:
-		0 0 7px #fff,
-		0 0 10px #fff,
-		/* 0 0 21px #fff, */
-		0 0 42px #0fa,
-		/* 0 0 82px #0fa, */
-		0 0 92px #0fa,
-		/* 0 0 102px #0fa, */
-		0 0 151px #0fa;
-
-	font-size: 50px;
-	margin: 30px;
-}
-
 body {
-	background-color: black;
+	background-color: #f7e1f7;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 
 .container {
-	background-color: white;
-	width: 100%;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 800px;
+	margin: 50px auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 100vh;
-	border: 1px solid black;
+	padding: 30px;
+	min-height: 500px;
+	box-sizing: border-box;
 }
 
-.inputPool {
-	width: 50%;
-	color: black;
+.neonText {
+	color: #4caf50;
+	text-shadow:
+		0 0 5px #a7edb2,
+		0 0 10px #7edc8a,
+		0 0 20px #4caf50,
+		0 0 30px #4caf50;
+	font-size: 70px;
+	margin: 40px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.container > div:first-child {
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	overflow: auto;
+	justify-content: flex-end;
+	margin-bottom: 20px;
 }
 
-.singleVocab {
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 5px;
+.speaker{
+	background-color: #ff9800;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	font-size: 40px;
+	cursor: pointer;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container button:hover {
+	background-color: #f57c00;
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.submit {
+	background-color: #2196f3;
+	font-size: 28px;
+	padding: 15px 40px;
+	border-radius: 30px;
+	margin-top: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: auto;
+	height: auto;
+	border: 0;
+}
+
+.submit:hover {
+	background-color: #1976d2;
 }
 
 .progressBar {
 	position: absolute;
-	bottom: 0;
-	/* border: 1px solid black; */
-	width: 100%;
-	height: 2%;
+	bottom: 20px;
+	left: 5%;
+	width: 90%;
+	height: 30px;
 	display: flex;
-	justify-content: space-evenly;
+	gap: 5px;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .PE {
-	background-color: white;
-	border: 1px solid black;
-	border-radius: 25px;
-	width: 100%;
+	background-color: #e0e0e0;
+	border: none;
+	border-radius: 10px;
+	flex-grow: 1;
+	transition: background-color 0.3s ease;
 }
 
 .PP {
-	background-color: green;
-	width: 100%;
-	border-radius: 25px;
+	background-color: #8bc34a;
+	border-radius: 10px;
+	flex-grow: 1;
+	transition: background-color 0.3s ease;
 }
 
 .PF {
-	background-color: red;
-	width: 100%;
+	background-color: #f44336;
+	border-radius: 10px;
+	flex-grow: 1;
+	transition: background-color 0.3s ease;
+}
+
+.score-modal-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(5px);
+}
+
+.score-modal-content {
+	background-color: #ffe082;
 	border-radius: 25px;
+	padding: 40px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.score-modal-content h2 {
+	color: #e65100;
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+
+.score-modal-content p {
+	font-size: 1.5em;
+	color: #424242;
+	margin-bottom: 15px;
+}
+
+.score-modal-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+	max-height: 150px;
+	overflow-y: auto;
+}
+
+.score-modal-content li {
+	font-size: 1.2em;
+	padding: 5px 0;
+}
+
+.score-modal-content .correct-word {
+	color: #388e3c;
+	font-weight: bold;
+}
+
+.score-modal-content .incorrect-word {
+	color: #d32f2f;
+	font-weight: bold;
+}
+
+.score-modal-buttons button {
+	margin: 0 15px;
+	padding: 12px 25px;
+	font-size: 1.2em;
+	border-radius: 25px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-modal-buttons button.new-game {
+	background-color: #ffc107;
+	color: #333;
+}
+
+.score-modal-buttons button.new-game:hover {
+	background-color: #ffb300;
+}
+
+.score-modal-buttons button.try-again {
+	background-color: #4dd0e1;
+	color: #333;
+}
+
+.score-modal-buttons button.try-again:hover {
+	background-color: #26c6da;
 }

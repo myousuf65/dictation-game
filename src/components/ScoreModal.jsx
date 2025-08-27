@@ -2,18 +2,9 @@ import { Modal, Button, Card, Row, Col, Progress, Divider, Tag } from 'antd';
 import { CheckCircleFilled, CloseCircleFilled, TrophyFilled } from '@ant-design/icons';
 
 
-function Modal(props) {
-
-	const gameData = props.gameData;
-	const handleTryAgain = () => {
-		console.log("Try again clicked");
-		setShowScore(false);
-	};
-
-	const handleNewGame = () => {
-		console.log("New game clicked");
-		setShowScore(false);
-	};
+export default function ScoreModal(props) {
+	const { gameData, setShowScore, showScore, handleTryAgain, handleNewGame } = props;
+	console.log(props)
 
 	return (
 		<Modal
@@ -34,6 +25,8 @@ function Modal(props) {
 				</Button>
 			]}
 			width={700}
+			closable={false}
+			maskClosable={false}
 			centered
 		>
 			{/* Score Summary */}
@@ -110,4 +103,3 @@ function Modal(props) {
 	)
 }
 
-export default Modal
