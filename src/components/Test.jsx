@@ -182,7 +182,7 @@ export const Test = () => {
 					score.map((item) => {
 						if (item === 0) { return <div className="PE"></div> }
 						else if (item === 1) { return <div className="PP"></div> }
-						else if (item == 2) { return <div className="PF"></div> }
+						else if (item === 2) { return <div className="PF"></div> }
 					})
 				}
 			</div>
